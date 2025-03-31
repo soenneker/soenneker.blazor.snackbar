@@ -1,0 +1,28 @@
+﻿@using Blazorise.Snackbar
+@using Soenneker.Blazor.Snackbar.Abstract
+@using Soenneker.Extensions.Task
+@inject ISnackbarUtil SnackbarUtil
+
+<SnackbarStack @ref="_snackbarStack" Location="SnackbarStackLocation.BottomEnd" />
+
+@code {
+    SnackbarStack? _snackbarStack;
+    const double _intervalBeforeMsgClose = 2000;
+
+    protected override void OnInitialized()
+    {
+        SnackbarUtil.ShowEvent += Show;
+        SnackbarUtil.ErrorEvent += Error;
+    }
+
+    private async ValueTask Show(string message)
+    {
+        await _snackbarStack!.PushAsync(message, SnackbarColor.Dark, options => { options.IntervalBeforeClose = _intervalBeforeMsgClose; }).NoSync();
+    }
+
+    private async ValueTask Error(string message)
+    {
+        await _snackbarStack!.PushAsync(message, SnackbarColor.Danger, options => { options.IntervalBeforeClose = _intervalBeforeMsgClose; }).NoSync();
+    }
+
+}

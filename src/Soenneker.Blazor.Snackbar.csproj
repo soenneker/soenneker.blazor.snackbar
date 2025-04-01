@@ -44,6 +44,6 @@
     <ItemGroup>
         <PackageReference Include="Blazorise.Snackbar" Version="1.7.5" />
         <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.3" />
-        <PackageReference Include="Soenneker.Extensions.Task" Version="3.0.93" />
+        <PackageReference Include="Soenneker.Extensions.Task" Version="3.0.94" />
     </ItemGroup>
 </Project>

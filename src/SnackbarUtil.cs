@@ -5,7 +5,7 @@ using Soenneker.Blazor.Snackbar.Abstract;
 namespace Soenneker.Blazor.Snackbar;
 
 ///<inheritdoc cref="ISnackbarUtil"/>
-public class SnackbarUtil : ISnackbarUtil
+public sealed class SnackbarUtil : ISnackbarUtil
 {
     public event Func<string, ValueTask> ShowEvent = null!;
     public event Func<string, ValueTask> ErrorEvent = null!;

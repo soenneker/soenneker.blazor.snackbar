@@ -1,4 +1,4 @@
-﻿@using Blazorise.Snackbar
+@using Blazorise.Snackbar
 @using Soenneker.Blazor.Snackbar.Abstract
 @using Soenneker.Extensions.Task
 @inject ISnackbarUtil SnackbarUtil
@@ -17,12 +17,12 @@
 
     private async ValueTask Show(string message)
     {
-        await _snackbarStack!.PushAsync(message, SnackbarColor.Dark, options => { options.IntervalBeforeClose = _intervalBeforeMsgClose; }).NoSync();
+        await _snackbarStack!.PushAsync(message, SnackbarColor.Dark, options => { options.IntervalBeforeClose = _intervalBeforeMsgClose; });
     }
 
     private async ValueTask Error(string message)
     {
-        await _snackbarStack!.PushAsync(message, SnackbarColor.Danger, options => { options.IntervalBeforeClose = _intervalBeforeMsgClose; }).NoSync();
+        await _snackbarStack!.PushAsync(message, SnackbarColor.Danger, options => { options.IntervalBeforeClose = _intervalBeforeMsgClose; });
     }
 
 }

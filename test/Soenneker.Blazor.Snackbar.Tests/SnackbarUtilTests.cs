@@ -1,4 +1,4 @@
-﻿using Soenneker.Blazor.Snackbar.Abstract;
+using Soenneker.Blazor.Snackbar.Abstract;
 using Soenneker.Tests.FixturedUnit;
 using Xunit;
 

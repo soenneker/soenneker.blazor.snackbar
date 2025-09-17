@@ -1,13 +1,14 @@
-@using Blazorise.Snackbar
 @using Soenneker.Blazor.Snackbar.Abstract
-@using Soenneker.Extensions.Task
+@using Soenneker.Quark.Dtos.Colors
+@using Soenneker.Quark.Snackbars
+@using Soenneker.Quark.Snackbars.Enums
 @inject ISnackbarUtil SnackbarUtil
 
-<SnackbarStack @ref="_snackbarStack" Location="SnackbarStackLocation.BottomEnd" />
+<SnackbarStack @ref="_snackbarStack" Location="SnackbarLocation.BottomEnd" />
 
 @code {
     SnackbarStack? _snackbarStack;
-    const double _intervalBeforeMsgClose = 2000;
+    const int _intervalBeforeMsgClose = 2000;
 
     protected override void OnInitialized()
     {
@@ -17,12 +18,12 @@
 
     private async ValueTask Show(string message)
     {
-        await _snackbarStack!.PushAsync(message, SnackbarColor.Dark, options => { options.IntervalBeforeClose = _intervalBeforeMsgClose; });
+        await _snackbarStack!.Push(message, Color.Dark, options => { options.HideDelay = _intervalBeforeMsgClose; });
     }
 
     private async ValueTask Error(string message)
     {
-        await _snackbarStack!.PushAsync(message, SnackbarColor.Danger, options => { options.IntervalBeforeClose = _intervalBeforeMsgClose; });
+        await _snackbarStack!.Push(message, Color.Danger, options => { options.HideDelay = _intervalBeforeMsgClose; });
     }
 
 }

@@ -17,12 +17,12 @@
 
     private async ValueTask Show(string message)
     {
-        await _snackbarStack!.Push(message, Color.Dark, options => { options.HideDelay = _intervalBeforeMsgClose; });
+        await _snackbarStack!.Push(message, BackgroundColor.Dark, options => { options.HideDelay = _intervalBeforeMsgClose; });
     }
 
     private async ValueTask Error(string message)
     {
-        await _snackbarStack!.Push(message, Color.Danger, options => { options.HideDelay = _intervalBeforeMsgClose; });
+        await _snackbarStack!.Push(message, BackgroundColor.Danger, options => { options.HideDelay = _intervalBeforeMsgClose; });
     }
 
 }

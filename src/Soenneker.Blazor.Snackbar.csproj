@@ -44,6 +44,6 @@
     <ItemGroup>
         <PackageReference Include="Soenneker.Extensions.Task" Version="4.0.106" />
 
-        <PackageReference Include="Soenneker.Quark.Suite" Version="4.0.283" />
+        <PackageReference Include="Soenneker.Quark.Suite" Version="4.0.284" />
     </ItemGroup>
 </Project>

@@ -43,6 +43,6 @@
     <ItemGroup>
         <PackageReference Include="Soenneker.Extensions.Task" Version="4.0.111" />
 
-        <PackageReference Include="Soenneker.Quark.Suite" Version="4.0.415" />
+        <PackageReference Include="Soenneker.Quark.Suite" Version="4.0.416" />
     </ItemGroup>
 </Project>
